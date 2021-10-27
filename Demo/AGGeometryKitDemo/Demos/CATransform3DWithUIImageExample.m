@@ -125,9 +125,9 @@
     [self.activityIndicator startAnimating];
 
     dispatch_async(queue, ^{
-
-        // Original image size: {1920, 864}
-        UIImage *result = [image imageByCroppingToQuad:quad destinationSize:CGSizeMake(864, 864)];//self.result.boundSize
+        // A4(210mm * 297mm) -> recommend pixel: 2100 * 2970
+        CGSize destinationSize = CGSizeMake(852, 852);
+        UIImage *result = [image imageByCroppingToQuad:quad destinationSize:destinationSize];//self.result.boundSize
 
         dispatch_async(dispatch_get_main_queue(), ^{
             self.result.image = result;
