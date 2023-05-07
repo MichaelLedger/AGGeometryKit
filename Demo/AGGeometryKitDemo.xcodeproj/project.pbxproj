@@ -275,12 +275,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A364F19A1CEC722B00ACEA82 /* Build configuration list for PBXNativeTarget "AGGeometryKitDemoTests" */;
 			buildPhases = (
+				7787D1A119360FD8B94E6A73 /* [CP] Check Pods Manifest.lock */,
 				C2D7003D010B742A0AC98A72 /* 📦 Check Pods Manifest.lock */,
 				A364F18F1CEC722B00ACEA82 /* Sources */,
 				A364F1901CEC722B00ACEA82 /* Frameworks */,
 				A364F1911CEC722B00ACEA82 /* Resources */,
-				5A120B79DB80692CDA2A0026 /* 📦 Embed Pods Frameworks */,
-				E4C7A55E461204C72EF688F2 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -296,12 +295,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A36D540F1B5E7BAC0040BDDC /* Build configuration list for PBXNativeTarget "AGGeometryKitDemo" */;
 			buildPhases = (
+				B9BEB46B76EA6122E693343E /* [CP] Check Pods Manifest.lock */,
 				03461E95369740634EFC6AF8 /* 📦 Check Pods Manifest.lock */,
 				A36D53E61B5E7BAC0040BDDC /* Sources */,
 				A36D53E71B5E7BAC0040BDDC /* Frameworks */,
 				A36D53E81B5E7BAC0040BDDC /* Resources */,
 				AEA48B94B72316D2DC80C97E /* 📦 Embed Pods Frameworks */,
-				787992AAAF3F7564DF122DBF /* 📦 Copy Pods Resources */,
+				4323CE25135A6924356450AC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -405,34 +405,44 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		5A120B79DB80692CDA2A0026 /* 📦 Embed Pods Frameworks */ = {
+		4323CE25135A6924356450AC /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AGGeometryKitDemo/Pods-AGGeometryKitDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AGGeometryKit/AGGeometryKit.framework",
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AGGeometryKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AGGeometryKitDemoTests/Pods-AGGeometryKitDemoTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AGGeometryKitDemo/Pods-AGGeometryKitDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		787992AAAF3F7564DF122DBF /* 📦 Copy Pods Resources */ = {
+		7787D1A119360FD8B94E6A73 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
+			inputFileListPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AGGeometryKitDemoTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AGGeometryKitDemo/Pods-AGGeometryKitDemo-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		AEA48B94B72316D2DC80C97E /* 📦 Embed Pods Frameworks */ = {
@@ -450,6 +460,28 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AGGeometryKitDemo/Pods-AGGeometryKitDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		B9BEB46B76EA6122E693343E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AGGeometryKitDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C2D7003D010B742A0AC98A72 /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -463,21 +495,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		E4C7A55E461204C72EF688F2 /* 📦 Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AGGeometryKitDemoTests/Pods-AGGeometryKitDemoTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -613,9 +630,9 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = ZA2PCCN27W;
 				INFOPLIST_FILE = AGGeometryKitDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mountain.test2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mountain.test3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "AGGeometryKitDemo/AGGeometryKitDemo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
